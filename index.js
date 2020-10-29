@@ -43,6 +43,14 @@ app.post("/addDoctor", (req,res)=>{
   console.log(name,email)
 })
 
+app.get('/appointments', (req, res) => {
+  appointmentCollection.find({})
+      .toArray((err, documents) => {
+          res.send(documents);
+      })
+})
+
+
 });
 
 
